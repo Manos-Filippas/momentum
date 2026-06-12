@@ -1,0 +1,120 @@
+/* ============================================================
+   MOMENTUM · COLOR TOKENS
+   Dark-first athletic performance palette.
+   Base scales + semantic aliases (dark theme is the default).
+   ============================================================ */
+
+:root {
+  /* ---- Warm-ink neutral scale (slight green cast, ties to Volt) ---- */
+  --ink-950: #0B0C0A; /* app background, deepest */
+  --ink-900: #101210;
+  --ink-850: #161814;
+  --ink-800: #1C1F19;
+  --ink-750: #23261F;
+  --ink-700: #2B2F26;
+  --ink-600: #3B4034;
+  --ink-500: #565C4D;
+  --ink-400: #7C8372;
+  --ink-300: #A7AD9C;
+  --ink-200: #CDD2C4;
+  --ink-100: #E7EAE0;
+  --ink-050: #F4F6EF;
+  --white:   #FFFFFF;
+  --black:   #000000;
+
+  /* ---- Volt — signature accent ---- */
+  --volt-200: #EEFFBE;
+  --volt-300: #E2FF8F;
+  --volt-400: #D6FF5C;
+  --volt-500: #C9FB45; /* PRIMARY brand accent */
+  --volt-600: #B2EA1E;
+  --volt-700: #8FBE10;
+  --volt-800: #69890C;
+
+  /* ---- Macro nutrient palette (domain colors) ---- */
+  --macro-protein: #FF6F5E; /* coral  */
+  --macro-carbs:   #FFC24B; /* amber  */
+  --macro-fat:     #4FD2C2; /* teal   */
+  --macro-protein-soft: rgba(255, 111, 94, 0.16);
+  --macro-carbs-soft:   rgba(255, 194, 75, 0.16);
+  --macro-fat-soft:     rgba(79, 210, 194, 0.16);
+
+  /* ---- Status / semantic hues ---- */
+  --green-500:  #4ADE80;
+  --amber-500:  #FFB020;
+  --red-500:    #FF5247;
+  --blue-500:   #5BA8FF;
+  --green-soft: rgba(74, 222, 128, 0.15);
+  --amber-soft: rgba(255, 176, 32, 0.15);
+  --red-soft:   rgba(255, 82, 71, 0.15);
+  --blue-soft:  rgba(91, 168, 255, 0.15);
+
+  /* ============================================================
+     SEMANTIC ALIASES — DARK THEME (default)
+     ============================================================ */
+
+  /* Surfaces */
+  --bg-app:        var(--ink-950);
+  --surface-1:     var(--ink-900); /* base cards */
+  --surface-2:     var(--ink-850); /* nested / inputs */
+  --surface-3:     var(--ink-800); /* raised / popovers */
+  --surface-inset: var(--ink-950);
+  --surface-hover: var(--ink-750);
+
+  /* Text */
+  --text-primary:   var(--ink-050);
+  --text-secondary: var(--ink-300);
+  --text-tertiary:  var(--ink-400);
+  --text-disabled:  var(--ink-500);
+  --text-on-accent: #131606; /* near-black on Volt */
+  --text-link:      var(--volt-500);
+
+  /* Borders / dividers */
+  --border-subtle:  rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-strong:  rgba(255, 255, 255, 0.18);
+  --divider:        rgba(255, 255, 255, 0.07);
+
+  /* Accent / interactive */
+  --accent:          var(--volt-500);
+  --accent-hover:    var(--volt-400);
+  --accent-pressed:  var(--volt-600);
+  --accent-soft:     rgba(201, 251, 69, 0.14);
+  --accent-ring:     rgba(201, 251, 69, 0.45);
+  --on-accent:       var(--text-on-accent);
+
+  /* Status */
+  --success: var(--green-500);
+  --warning: var(--amber-500);
+  --danger:  var(--red-500);
+  --info:    var(--blue-500);
+}
+
+/* ============================================================
+   LIGHT THEME — opt-in via [data-theme="light"]
+   For marketing surfaces / printed specimens.
+   ============================================================ */
+[data-theme="light"] {
+  /* Bright, airy surfaces. Background sits close to the white cards — low
+     contrast; crisp hairline borders (not a tonal step) define the cards. */
+  --bg-app:        #F4F5F4;
+  --surface-1:     var(--white);
+  --surface-2:     #FAFBFA;
+  --surface-3:     var(--white);
+  --surface-inset: #ECEEEC;
+  --surface-hover: #F6F7F6;
+
+  --text-primary:   var(--ink-900);
+  --text-secondary: var(--ink-600);
+  --text-tertiary:  var(--ink-500);
+  --text-disabled:  var(--ink-400);
+  --text-on-accent: #131606;
+  --text-link:      var(--volt-800);
+
+  --border-subtle:  rgba(11, 12, 10, 0.06);
+  --border-default: rgba(11, 12, 10, 0.12);
+  --border-strong:  rgba(11, 12, 10, 0.22);
+  --divider:        rgba(11, 12, 10, 0.09);
+
+  --accent-soft:    rgba(143, 190, 16, 0.16);
+}

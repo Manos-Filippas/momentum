@@ -1,0 +1,66 @@
+<!-- @dsCard group="Mobile App" viewport="480x900" name="Login — playful light" subtitle="Auth screen · language + theme switchers, email/password, OAuth" -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momentum — Log in</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { background:
+      radial-gradient(58% 48% at 16% 10%, rgba(201,251,69,0.24), transparent 62%),
+      radial-gradient(54% 46% at 86% 16%, rgba(226,255,143,0.20), transparent 62%),
+      radial-gradient(60% 50% at 84% 92%, rgba(178,234,30,0.15), transparent 60%),
+      var(--bg-app);
+    font-family: var(--font-text);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 10px 0; }
+  .phone { width: 414px; height: 880px; flex: none; border-radius: 46px;
+    --field: #FFFFFF; --field-hover: #F4F5F4;
+    background:
+      radial-gradient(115% 62% at 4% -8%, rgba(201,251,69,0.46), transparent 62%),
+      radial-gradient(105% 56% at 106% 6%, rgba(226,255,143,0.40), transparent 60%),
+      radial-gradient(120% 50% at 90% 105%, rgba(178,234,30,0.30), transparent 58%),
+      radial-gradient(118% 50% at 0% 99%, rgba(238,255,190,0.36), transparent 58%),
+      var(--bg-app);
+    border: 1px solid var(--border-default);
+    position: relative; overflow: hidden; display: flex; flex-direction: column; }
+  .statusbar { height: 50px; flex: none; display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 28px 0 30px; font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--text-primary); z-index: 3; }
+  .statusbar .icons { display: flex; align-items: center; gap: 7px; }
+  .scroll { flex: 1; overflow-y: auto; min-height: 0; }
+  .scroll::-webkit-scrollbar { display: none; }
+  [data-theme="dark"] .phone { --field: var(--surface-3); --field-hover: var(--surface-hover); }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <script type="text/babel" src="icons.jsx"></script>
+  <script type="text/babel" src="LoginScreen.jsx"></script>
+
+  <script type="text/babel">
+    const Icon = window.MIcon;
+    function App() {
+      return (
+        <div className="phone">
+          <div className="statusbar">
+            <span>9:14</span>
+            <span className="icons"><Icon name="signal" size={15} /><Icon name="wifi" size={15} /><Icon name="battery-full" size={18} /></span>
+          </div>
+          <div className="scroll">
+            <window.MLogin />
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
